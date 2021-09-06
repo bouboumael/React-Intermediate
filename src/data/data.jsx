@@ -1,19 +1,6 @@
-export const sampleEmployee = {
-    gender: 'male',
-    name: {
-        first: 'Charlie',
-        last: 'Thompson',
-    },
-    location: {
-        street: {
-            number: 761,
-            name: 'Tay Street',
-        },
-        city: 'Timaru',
-        postcode: 76111,
-    },
-    email: 'charlie.thompson@example.com',
-    picture: {
-        medium: 'https://randomuser.me/api/portraits/med/men/40.jpg',
-    },
+export const sampleSimpson = {
+    "quote": "Hello Corrector!",
+    "character": "Master of JS",
+    "image": "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FApuNahasapeemapetilon.png?1497567511629",
+    "characterDirection": "Left"
 };

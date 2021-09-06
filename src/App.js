@@ -1,27 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
-import DisplayEmployee from "./components/DisplayEmployee";
-import {sampleEmployee} from "./data/data";
+import DisplaySimpson from "./components/DisplaySimpson";
 import {useState} from "react";
 import axios from "axios";
+import {sampleSimpson} from "./data/data";
 
 function App() {
-    const [employee, setEmployee] = useState(sampleEmployee)
-    const getEmployee = () => {
+
+    const [simpson, setSimpson] = useState(sampleSimpson);
+
+    const getSimpson = () => {
         axios
-            .get('https://randomuser.me/api?nat=en')
+            .get('https://simpsons-quotes-api.herokuapp.com/quotes')
             // Extract the DATA from the received response
             .then((response) => response.data)
             // Use this data to update the state
             .then((data) => {
-                setEmployee(data.results[0]);
+                setSimpson(data[0]);
             });
     }
 
     return (
         <div className={'app'}>
-            <DisplayEmployee employee={employee}/>
-            <button type={"button"} onClick={getEmployee}>Get employee</button>
+            <DisplaySimpson simpson={simpson}/>
+            <button type={"button"} onClick={getSimpson}>Get Simpson</button>
         </div>
     );
 }
